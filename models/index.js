@@ -1,5 +1,5 @@
-const Model1 = require ('./Model1');
-const Model2 = require ('./Model2');
+const User = require ('./User');
+const Post = require ('./Post');
 
 
-module.exports = {Model1, Model2};
+module.exports = {User, Post};
