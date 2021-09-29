@@ -18,21 +18,19 @@ router.get('/login', (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/signup', (req, res) => {
   try {
-    res.render('dashboard')
+    res.render('signup')
   } catch (err) {
     res.status(500).json(err)
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
+router.get('/dashboard', (req, res) => {
+  try {
+    res.render('dashboard')
+  } catch (err) {
+    res.status(500).json(err)
   }
 });
 
