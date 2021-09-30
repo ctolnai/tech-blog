@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log(req.body)
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -50,11 +51,14 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+  console.log(req.session)
   if (req.session.logged_in) {
+    console.log("was logged in")
     req.session.destroy(() => {
       res.status(204).end();
     });
   } else {
+    console.log("wasn't logged in")
     res.status(404).end();
   }
 });
