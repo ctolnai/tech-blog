@@ -56,6 +56,8 @@ router.post('/logout', (req, res) => {
     console.log("was logged in")
     req.session.destroy(() => {
       res.status(204).end();
+      res.redirect('/');
+      return;
     });
   } else {
     console.log("wasn't logged in")

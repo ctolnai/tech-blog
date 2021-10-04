@@ -1,17 +1,17 @@
 [
     {
-      "title": "Music Near Me",
-      "post": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+      "title": "Bootstrap",
+      "post": "Its a great program"
       
     },
     {
-      "title": "The Ultimate Tech Quiz",
-      "post": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+      "title": "jQuery",
+      "post": "i like it better than vanilla js"
       
     },
     {
-      "title": "Roll 'Em Up",
-      "post": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+      "title": "bcrypt",
+      "post": "great way to hash passwords"
       
     }
   ]
