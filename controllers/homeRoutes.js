@@ -45,6 +45,9 @@ router.get('/dashboard', withAuth, (req, res) => {
     res.render('dashboard')
   } catch (err) {
     res.status(500).json(err)
+    res.redirect('/login')
+    return
+    
   }
 });
 

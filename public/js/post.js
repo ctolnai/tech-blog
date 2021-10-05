@@ -12,7 +12,6 @@ const post = async () => {
     }
   };
 
-  console.log(document.querySelector('#comment'))
 
   document.querySelector('#comment').addEventListener('click', (event) => {
     event.preventDefault()

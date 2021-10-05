@@ -47,7 +47,6 @@ router.post('/login', async (req, res) => {
     });
 
 
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + userData.id)
   } catch (err) {
     res.status(400).json(err);
   }

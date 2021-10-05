@@ -6,15 +6,11 @@ const logout = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/login');
     } else {
-      alert(response.statusText);
+      alert("You are already logged out. You will now be redirected to the home page");
+      document.location.replace('/');
     }
   };
 
-  console.log(document.querySelector('#logout'))
-
-  document.querySelector('#logout').addEventListener('click', (event) => {
-    event.preventDefault()
-    logout()
-  } );
+  document.querySelector('#logout').addEventListener('click', logout);
