@@ -1,13 +1,13 @@
 {{!-- View all posts--}}
 
 {{#each posts as | post|}}
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="card" style="width: 50rem;">
+  {{!-- <img src="..." class="card-img-top" alt="..."> --}}
   <div class="card-body">
-    <h5 class="card-title">{{post.title}}</h5>
-    <h5 class="card-title">{{post.User.username}}</h5>
+    <h1 class="card-title">{{post.title}}</h1>
+    <h5 class="card-user">Posted by {{post.user.username}}</h5>
     <p class="card-text">{{post.post}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>  
+    <a href="/comment" class="btn btn-primary comment">See Comments</a>  
     {{!-- post.id to show comments also. --}}
   </div>
 </div>

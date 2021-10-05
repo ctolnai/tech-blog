@@ -1,6 +1,6 @@
-const logout = async () => {
+const post = async () => {
     
-    const response = await fetch('/api/users/logout', {
+    const response = await fetch('/comment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -12,9 +12,9 @@ const logout = async () => {
     }
   };
 
-  console.log(document.querySelector('#logout'))
+  console.log(document.querySelector('#comment'))
 
-  document.querySelector('#logout').addEventListener('click', (event) => {
+  document.querySelector('#comment').addEventListener('click', (event) => {
     event.preventDefault()
     logout()
   } );

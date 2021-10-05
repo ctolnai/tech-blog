@@ -5,17 +5,9 @@
     <h5 class="card-user">Posted by {{post.user.username}}</h5>
     <p class="card-text">{{post.post}}</p>
     <p class="card-comment">{{post.comment.body}}</p>
+    {{!-- <a href="/comment" class="btn btn-primary">See Comments</a>   --}}
   </div>
 </div>
 {{/each}}
 
-<form>
-  <div class="mb-3">
-    <label class="form-label">Add A Post</label>
-    <input class="newPost" id="newPost">
-    
-  </div>
-  <button type="submit" class="btn btn-primary">Post</button>
-</form>
-
-<script src= "../public/js/dashboard.js"></script>
+<script src= "../public/js/post.js"></script>

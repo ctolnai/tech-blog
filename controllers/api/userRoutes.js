@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
+  console.log(req.body)
   try {
     const userData = await User.create(req.body);
 
@@ -41,10 +42,12 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
+
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + userData.id)
   } catch (err) {
     res.status(400).json(err);
   }
@@ -65,5 +68,38 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// just like the one below!!!!
+// router.get('/comment/:id', withAuth, async (req, res) => {
+//   try {
+//     const postData = await Post.findByPk({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//           model: Comment,
+//           attributes: ['body'],
+//         },
+//       ],
+//     });
+
+//     res.render('post', {
+//       posts,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/dashboard', async (req, res) => {
+  try {
+    const postData = await Post.findAll({ where: { user_id: req.session.user_id } });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
+    res.render('dashboard', { posts })
+  } catch (err) {
+    res.status(500).json(err)
+  } 
+});
 
 module.exports = router;
