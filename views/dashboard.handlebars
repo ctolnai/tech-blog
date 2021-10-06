@@ -1,25 +1,43 @@
-
 {{#each posts as | post|}}
-<div class="card" style="width: 50rem;">
-  <div class="card-body">
-    <h1 class="card-title">{{post.title}}</h1>
-    <h5 class="card-user">Posted by {{post.user.username}}</h5>
-    <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
-    <p class="card-text">{{post.post}}</p>
-    <p class="card-comment">{{post.comment.body}}</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="card col" style="width: 50rem;">
+      <div class="card-body">
+        <h1 class="card-title">{{post.title}}</h1>
+        <h5 class="card-user">Posted by {{post.user.username}}</h5>
+        <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
+        <p class="card-text">{{post.post}}</p>
+        <p class="card-comment">{{post.comment.body}}</p>
+      </div>
+    </div>
   </div>
 </div>
 {{/each}}
 
-<form>
-  <div class="mb-3">
-    <label class="form-label">Add A Post</label>
-    <p></p>
-    <input class="newTitle" id="newTitle" placeholder="Title">
-    <p></p>
-    <input class="newPost" id="newPost" placeholder="Post">
+<form class="p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <label class="form-label">
+        <h1>Add A Post</h1>
+      </label>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Title:</span>
+          <input class="newTitle form-control-lg" id="newTitle" placeholder="Title">
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Post:</span>
+          <textarea class="newPost form-control-lg" id="newPost" placeholder="Post"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary postButton">Post</button>
   </div>
-  <button type="submit" class="btn btn-primary postButton">Post</button>
+  </div>
 </form>
 
-<script src= "./js/post.js"></script>
+<script src="./js/post.js"></script>
