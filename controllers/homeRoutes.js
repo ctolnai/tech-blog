@@ -40,16 +40,22 @@ router.get('/signup', (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, (req, res) => {
+
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    res.render('dashboard')
+    const postData = await Post.findAll({ where: { user_id: req.session.user_id },
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }]
+    });
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
+    res.render('dashboard', { posts })
   } catch (err) {
     res.status(500).json(err)
-    res.redirect('/login')
-    return
-    
-  }
+  } 
 });
-
 
 module.exports = router;

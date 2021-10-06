@@ -1,8 +1,10 @@
-{{#each posts as | post| }}
+
+{{#each posts as | post|}}
 <div class="card" style="width: 50rem;">
   <div class="card-body">
     <h1 class="card-title">{{post.title}}</h1>
     <h5 class="card-user">Posted by {{post.user.username}}</h5>
+    <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
     <p class="card-text">{{post.post}}</p>
     <p class="card-comment">{{post.comment.body}}</p>
   </div>
@@ -12,10 +14,12 @@
 <form>
   <div class="mb-3">
     <label class="form-label">Add A Post</label>
-    <input class="newPost" id="newPost">
-    
+    <p></p>
+    <input class="newTitle" id="newTitle" placeholder="Title">
+    <p></p>
+    <input class="newPost" id="newPost" placeholder="Post">
   </div>
-  <button type="submit" class="btn btn-primary">Post</button>
+  <button type="submit" class="btn btn-primary postButton">Post</button>
 </form>
 
-<script src= "../public/js/dashboard.js"></script>
+<script src= "./js/post.js"></script>

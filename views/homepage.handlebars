@@ -6,6 +6,7 @@
   <div class="card-body">
     <h1 class="card-title">{{post.title}}</h1>
     <h5 class="card-user">Posted by {{post.user.username}}</h5>
+    <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
     <p class="card-text">{{post.post}}</p>
     <a href="/comment" class="btn btn-primary comment">See Comments</a>  
     {{!-- post.id to show comments also. --}}

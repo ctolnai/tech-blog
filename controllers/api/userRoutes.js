@@ -53,16 +53,13 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  console.log(req.session)
   if (req.session.logged_in) {
-    console.log("was logged in")
     req.session.destroy(() => {
       res.status(204).end();
       res.redirect('/');
       return;
     });
   } else {
-    console.log("wasn't logged in")
     res.status(404).end();
   }
 });
@@ -89,16 +86,6 @@ router.post('/logout', (req, res) => {
 //   }
 // });
 
-router.get('/dashboard', async (req, res) => {
-  try {
-    const postData = await Post.findAll({ where: { user_id: req.session.user_id } });
 
-    const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts)
-    res.render('dashboard', { posts })
-  } catch (err) {
-    res.status(500).json(err)
-  } 
-});
 
 module.exports = router;

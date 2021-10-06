@@ -1,7 +1,10 @@
-const post = async () => {
-    
-    const response = await fetch('/comment', {
+const post = async (event) => {
+event.preventDefault()
+  const title = document.querySelector('#newTitle').value.trim();
+  const post = document.querySelector('#newPost').value.trim();
+    const response = await fetch('/api/post', {
       method: 'POST',
+      body: JSON.stringify({ title, post }),
       headers: { 'Content-Type': 'application/json' },
     });
   
@@ -13,7 +16,4 @@ const post = async () => {
   };
 
 
-  document.querySelector('#comment').addEventListener('click', (event) => {
-    event.preventDefault()
-    logout()
-  } );
+  document.querySelector('.postButton').addEventListener('click', post);
