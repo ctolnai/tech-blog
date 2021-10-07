@@ -3,12 +3,15 @@
   <div class="row">
     <div class="card col" style="width: 50rem;">
       <div class="card-body">
-        <h1 class="card-title">{{post.title}}</h1>
+        <h2 class="card-title">{{post.title}}</h2>
         <h5 class="card-user">Posted by {{post.user.username}}</h5>
         <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
-        <p class="card-text">{{post.post}}</p>
-        <p class="card-comment">{{post.comment.body}}</p>
+        <h3 class="card-text">{{post.post}}</h3>
+
       </div>
+      {{!-- {{#if comments}}
+      <h4 class="card-comment">Comments: {{post.comment.body}}</h4>
+      {{/if}} --}}
     </div>
   </div>
 </div>

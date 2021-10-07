@@ -1,0 +1,34 @@
+
+
+<div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <h2 class="card-title">Title: {{title}}</h2>
+    <h5 class="card-user">Posted by: {{user.username}}</h5>
+    <h5 class="card-dateStamp"> Posted on: {{createdAt}}</h5>
+    <h3 class="card-text">Post: {{post}}</h3>
+  </div>
+</div>
+
+
+<body>
+<form class="p-3">
+  <div class="container-fluid">
+    <div class="row">
+      <label class="form-label">
+        <h1>Add A Comment</h1>
+      </label>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Add a Comment:</span>
+          <textarea class="newComment form-control-lg" id="newComment" placeholder="Comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary commentButton" onclick="getTheCall({{id}})">Post your Comment</button>
+  </div>
+  </div>
+</form>
+<script src="/js/comment.js"></script>
+</body>

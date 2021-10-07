@@ -2,14 +2,12 @@
 
 {{#each posts as | post|}}
 <div class="card" style="width: 50rem;">
-  {{!-- <img src="..." class="card-img-top" alt="..."> --}}
   <div class="card-body">
-    <h1 class="card-title">{{post.title}}</h1>
-    <h5 class="card-user">Posted by {{post.user.username}}</h5>
+    <h2 class="card-title">Title: {{post.title}}</h2>
+    <h5 class="card-user">Posted by: {{post.user.username}}</h5>
     <h5 class="card-dateStamp"> Posted on: {{post.createdAt}}</h5>
-    <p class="card-text">{{post.post}}</p>
-    <a href="/comment" class="btn btn-primary comment">See Comments</a>  
-    {{!-- post.id to show comments also. --}}
+    <h3 class="card-text">Post: {{post.post}}</h3>
+    <a href="/comment/{{post.id}}" class="btn btn-primary" data-postId="{{post.id}}">Click to Comment</a>
   </div>
 </div>
 {{/each}}
