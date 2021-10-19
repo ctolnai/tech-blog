@@ -64,28 +64,4 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// just like the one below!!!!
-// router.get('/comment/:id', withAuth, async (req, res) => {
-//   try {
-//     const postData = await Post.findByPk({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['username'],
-//           model: Comment,
-//           attributes: ['body'],
-//         },
-//       ],
-//     });
-
-//     res.render('post', {
-//       posts,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-
 module.exports = router;
