@@ -34,9 +34,6 @@ router.get('/comment/:id', async (req, res) => {
     });
     const comments = JSON.stringify(commentData)
     const comments1 = JSON.parse(comments)
-    // commentData.map((comment) => comment.get({ plain: true }));
-    console.log(`!!!!!!!!!!!!!!!!!!!! ${commentData}!!!!!!!!!!!!!!!!!`)
-    console.log(comments1)
     res.render('comment',  comments1 )
   } catch (err) {
     res.status(500).json(err)
@@ -60,7 +57,6 @@ router.get('/signup', (req, res) => {
   }
 });
 
-// how do you show all comments, not just from that user?
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({ where: { user_id: req.session.user_id },
@@ -78,7 +74,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     res.render('dashboard', { posts })
-    // res.json(posts)
   } catch (err) {
     res.status(500).json(err)
   } 
