@@ -1,10 +1,13 @@
-function getTheCall(data) {
+
         const comment = async (event) => {
             event.preventDefault()
-              const comment = document.querySelector('#newComment').value.trim();
-                const response = await fetch(`/api/comment/${data}`, {
+            const id = document.location.pathname.split("/")
+            console.log(id)
+            
+              const body = document.querySelector('#newComment').value.trim();
+                const response = await fetch(`/api/comment/${id[2]}`, {
                   method: 'POST',
-                  body: JSON.stringify({ comment, data }),
+                  body: JSON.stringify({ body }),
                   headers: { 'Content-Type': 'application/json' },
                 });
               
@@ -14,7 +17,6 @@ function getTheCall(data) {
                   alert(response.statusText);
                 }
               };
-        console.log(data)
-    }
+
     
-      //document.querySelector('.commentButton').addEventListener('click', comment);
+      document.querySelector('.commentButton').addEventListener('click', comment);

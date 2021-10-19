@@ -63,7 +63,7 @@ router.get('/signup', (req, res) => {
 // how do you show all comments, not just from that user?
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk({ where: { user_id: req.session.user_id },
+    const postData = await Post.findAll({ where: { user_id: req.session.user_id },
       include: [
         {
           model: User,
@@ -78,6 +78,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts)
     res.render('dashboard', { posts })
+    // res.json(posts)
   } catch (err) {
     res.status(500).json(err)
   } 
