@@ -1,5 +1,5 @@
 {
-  "name": "ParkSmart",
+  "name": "tech-blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kimberly-Rodriguez/ParkSmart.git"
+    "url": "git+https://github.com/ctolnai/tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kimberly-Rodriguez/ParkSmart/issues"
+    "url": "https://github.com/ctolnai/tech-blog/issues"
   },
-  "homepage": "https://github.com/Kimberly-Rodriguez/ParkSmart#readme",
+  "homepage": "https://github.com/ctolnai/tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
